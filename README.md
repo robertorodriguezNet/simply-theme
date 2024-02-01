@@ -31,7 +31,7 @@ El identificador para WP no tiene por qué ser igual que el nombre dado al menú
 
 `register_nav_menus( array(`
 
-    `'menu-horizontal' => __('Menu Horizontal', 'simplytheme');`
+`'menu-horizontal' => __('Menu Horizontal', 'simplytheme');`
 
 `));`
 

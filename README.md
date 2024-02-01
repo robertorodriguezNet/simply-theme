@@ -29,13 +29,9 @@ El identificador para WP no tiene por qué ser igual que el nombre dado al menú
 
 " "=> __( 'Identificador para WP', '')
 
-`
-    register_nav_menus( array(
-
-        'menu-horizontal' => __('Menu Horizontal', 'simplytheme')
-        
-    ));
-`
+`register_nav_menus( array(`
+    `'menu-horizontal' => __('Menu Horizontal', 'simplytheme')`
+`));`
 
 ### Mostrar el menú
 

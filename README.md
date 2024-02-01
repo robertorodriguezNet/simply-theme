@@ -27,10 +27,11 @@ Los menús se guardan en la tabla *wp_terms*.
 Registrar un nuevo menú de navegación:
 El identificador para WP no tiene por qué ser igual que el nombre dado al menú en el panel al crear el menú, este identificador aparece para preguntar "Dónde se verá" al momento de crear el menú.
 
-'' => __( 'Identificador para WP', '')
+" "=> __( 'Identificador para WP', '')
+
 `
-    register_nav_menus( array(
-        'menu-horizontal' => __('Menu Horizontal', 'simplytheme')
+    register_nav_menus( array(<br>
+        'menu-horizontal' => __('Menu Horizontal', 'simplytheme')<br>
     ));
 `
 
@@ -46,6 +47,26 @@ A la función hay que pasarle como argumento qué menú queremos agregar.
         'container_class' => 'menu-horizontal'
     );
     wp_nav_menu($args);
+`
+
+---
+
+## ESTILOS
+
+### Cargar los estilos
+
+Entre las dependencias se encuentra `normalize`, que se usa para reiniciar las opciones css de los navegadores y que los estilos tengan consistencia.
+
+Las dependencias se cargan antes que los archivo que las llaman.
+
+Se agregan con la función `wp_enqueue_style('nombre-del-estilo','ubicación','dependencias',version);`.
+Hook: `wp_enqueue_script`.
+
+`
+function simplytheme_scripts_styles(){
+    wp_enqueue_style('style', get_stylesheet_uri(), array(),'1.0.0');
+}
+add_action('wp_enqueue_scripts','simplytheme_scripts_styles');
 `
 
 ---

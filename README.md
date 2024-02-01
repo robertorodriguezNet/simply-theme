@@ -40,14 +40,14 @@ register_nav_menus( array(
 En el lugar en el que se quiera mostrar el menú se llama a `wp_nav_menu(args)`.
 A la función hay que pasarle como argumento qué menú queremos agregar.
 
-`
+```php
     $args = array(
         'theme_location' => 'menu-horizontal',
         'container' => 'nav',
         'container_class' => 'menu-horizontal'
     );
     wp_nav_menu($args);
-`
+```
 
 ---
 
@@ -62,12 +62,12 @@ Las dependencias se cargan antes que los archivo que las llaman.
 Se agregan con la función `wp_enqueue_style('nombre-del-estilo','ubicación','dependencias',version);`.
 Hook: `wp_enqueue_script`.
 
-`
+```php
 function simplytheme_scripts_styles(){
     wp_enqueue_style('style', get_stylesheet_uri(), array(),'1.0.0');
 }
 add_action('wp_enqueue_scripts','simplytheme_scripts_styles');
-`
+```
 
 ---
 

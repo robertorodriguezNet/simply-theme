@@ -69,11 +69,45 @@ function simplytheme_scripts_styles(){
 add_action('wp_enqueue_scripts','simplytheme_scripts_styles');
 ```
 
+### normalize.css
+
+Descarga: <https://necolas.github.io/normalize.css/>
+Al pulsar en *Download* se abre una ventana con la hoja de estilo.
+Se copia la URL y se pega en la función `wp_enqueue_style`;
+Hay que agregar *normalize* a las dependencias del estilo principal para que se cargue antes.
+
+```php
+function simplytheme_scripts_styles(){
+
+    wp_enqueue_style('normalize','https://necolas.github.io/normalize.css/8.0.1/normalize.css', array(),'8.0.1');
+    wp_enqueue_style('style', get_stylesheet_uri(), array('normalize'),'1.0.0');
+
+}
+add_action('wp_enqueue_scripts','simplytheme_scripts_styles');
+```
+
+### Google fonts
+
+URL: <https://fonts.google.com/>
+
+Una vez seleccionadas las fuentes, se copia el enlace *@import* y se agrega a la hoja de estilo principal.
+
+Fuentes:
+
+- Raleway:
+  - Regular 400
+  - Bold 700
+  - Black 900
+- Staatliches
+  - Regular 400
+
 ---
 
 ## HOOKS
 
 - **init** ejecuta la función una vez que arranca WP.
+- **wp_enqueue_style** carga scripts y hojas de estilo.
+  - **wp_enqueue_style** es llamado en la función `wp_head()`;
   
 ---
 

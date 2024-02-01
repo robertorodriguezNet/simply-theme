@@ -6,7 +6,7 @@
 function simplytheme_menus(){
 
     register_nav_menus( array(
-        'menu-horizontal' => __('Menú Horizontal', 'simplytheme')
+        'menu-principal' => __('Menú Principal', 'simplytheme')
     ));
 
 }

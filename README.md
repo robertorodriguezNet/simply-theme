@@ -72,8 +72,11 @@ add_action('wp_enqueue_scripts','simplytheme_scripts_styles');
 ### normalize.css
 
 Descarga: <https://necolas.github.io/normalize.css/>
+
 Al pulsar en *Download* se abre una ventana con la hoja de estilo.
+
 Se copia la URL y se pega en la función `wp_enqueue_style`;
+
 Hay que agregar *normalize* a las dependencias del estilo principal para que se cargue antes.
 
 ```php

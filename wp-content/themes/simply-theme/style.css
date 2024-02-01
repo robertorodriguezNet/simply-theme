@@ -13,88 +13,191 @@ Text Domain: simplytheme
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&family=Staatliches&display=swap');
 
-:root{
+:root {
     /** Fuentes **/
     --main-font: 'Raleway', sans-serif;
     --heading-font: 'Staatliches', sans-serif;
 
     /** Colores **/
     --black: #000;
-    --dark-gray: #2f2e2e;
-    --light-gray: #ebebeb;
-    --primary: #ff5b00;
+    --dark-gray: #333;
+    --light-gray: #ccc;
+    --primary: #f60;
     --white: #fff;
 }
 
-html{
+html {
     box-sizing: border-box;
     font-size: 62.5%;
 }
 
-body{
+body {
     font-family: var(--main-font);
     font-size: 16px;
     font-family: 1.6rem;
     line-height: 2;
 }
 
-*, *:before, *:after{
+*,
+*:before,
+*:after {
     box-sizing: border-box;
 }
 
 /** HEADINGS ************************************ **/
-h1, h2, h3, h4{
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--heading-font);
     margin: 0 0 5rem 0;
     line-height: 1.2;
 }
-h1{
+
+h1 {
     font-size: 6rem;
 }
-h2{
+
+h2 {
     font-size: 4.8rem;
 }
-h3{
+
+h3 {
     font-size: 3.6rem;
 }
-h4{
+
+h4 {
     font-size: 2.4rem;
 }
 
 /** GLOBALES ************************************ **/
-p{
+p {
     margin: 0;
 }
-a{
+
+a {
     text-decoration: none;
 }
-ul{
+
+ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-img{
+
+img {
     display: block;
     max-width: 100%;
     height: auto;
 }
 
-.container{
-    width: min(95%, 120rem); /* min: 95%, max: 1200px */
+/** Estructura ********************************** **/
+header {
+    background-color: var(--dark-gray);
+    padding: 2rem 0;
+}
+
+.container {
+    width: min(95%, 120rem);
+    /* min: 95%, max: 1200px */
     margin: 0 auto;
 }
 
-.section{
+.section {
     padding: 5rem 0;
 }
 
-/** Utilidades ********************************* **/
-.text-center{
+/** Barra de navegación **/
+/* Contendor que contien las capas del logo y el menú*/
+header .nav-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav.menu-principal a{
+    color: var(--white);
+    display: block;
+    font-family: var(--heading-font);
+    font-size: 2.2rem;
+    padding: .5rem 2rem;
     text-align: center;
 }
-.primary-text{
+header nav.menu-principal .current_page_item{
+    border-bottom: solid 3px var(--primary);
+}
+/* Menú principal está oculto en modo móvil */
+/* header nav.menu-principal {
+    display: none;
+} */
+
+@media (min-width: 768px) {
+    header .nav-bar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header nav.menu-principal {
+        display: block;
+    }
+    header nav.menu-principal ul {
+        display: flex;
+    }
+
+    /* Efecto hover sobre los elementos del menú */
+.menu-principal a{
+        position: relative;
+        z-index: 1;
+    }
+    header nav.menu-principal a::before,
+    header nav.menu-principal a::after{
+        position: absolute;
+        left: 0;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 50%;
+        background-color: var(--primary);
+        z-index: -1;
+        transform: scaleX(0);
+        transition: transform .6s;
+    }
+    header nav.menu-principal a::before{
+        top: 0;
+        transform-origin: left;
+    }
+    header nav.menu-principal a::after{
+        top: 50%;
+        transform-origin: right;
+    }
+    header nav.menu-principal a:hover::before{
+        transform: scaleX(1);
+    }    
+    header nav.menu-principal a:hover::after{
+        transform: scaleX(1);
+    }    
+
+}
+
+/** Componentes ********************************* **/
+.logo img {
+    background-color: var(--white);
+    max-width: 15rem;
+    border-radius: .8rem;
+}
+
+/** Utilidades ********************************** **/
+.bg-white {
+    background-color: var(--white);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.primary-text {
     color: var(--primary);
 }
-.white-text{
+
+.white-text {
     color: var(--white);
 }

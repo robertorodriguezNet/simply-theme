@@ -108,16 +108,43 @@ Fuentes:
 
 ## HOOKS
 
+- **after_setup_theme**
+  - Se ejecuta al activarse el tema.
 - **init** ejecuta la función una vez que arranca WP.
 - **wp_enqueue_style** carga scripts y hojas de estilo.
   - **wp_enqueue_style** es llamado en la función `wp_head()`;
   
 ---
 
-## ¿QUÉ QUIERO HACER?
+## PLANTILLAS
 
-- Establecer el idioma de la página `html lang`
-  - Se usa la función `language_attributes()` para sustiruir el atributo `lang=""`.
+### page.php
+
+Plantilla para páginas.
+Cualquier página de la sección "Página" se mostrará en la plantilla *page.php*.
+
+---
+
+## ¿QUÉ QUIERO HACER?
   
-- Obtener la URL hacia el directorio del tema.
+- **footer** Incluir el footer
+  - En `footer.php` se copia el *</body>* y el *</html>*.
+  - Se llama desde el template con `get_footer()`.
+  
+- **header** Incluir el header
+  - En `header.php` se copia el *head* y el *header*.
+  - Se llama desde el template con `get_header()`.
+  
+- **Idioma** Establecer el idioma de la página `html lang`
+  - Se usa la función `language_attributes()` para sustiruir el atributo `lang=""`.
+
+- **Imagen destacada** habilitar.
+  - Se habilita desde `functions.php`.
+  - El hook en el que se carga el **after_setup_theme**.
+  - En la función `add_theme_support('post_thumbnail');` declaramos las funcionalidades que queramos activar.
+  - Se carga llamando a `the_post_thumbnail(tamaño,atributos)`.
+    - Atributos:  `the_post_thumbnail('full',array('class' => 'imagen-destacada'))`.
+  - Se debe comprobar la existencia de la imagen destacada con `if(have_post_thumbnail())`;
+
+- **URL** Obtener la URL hacia el directorio del tema.
   - `<?= get_template_directory_uri(); ?>`

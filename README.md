@@ -126,9 +126,9 @@ Plantilla para páginas.
 
 ## TEMPLATES (plantillas comunes)
 
-Plantillas para usar en diferentes páginas.
-Hay que especificar que se trata de un template con un comentario multilínea.
-Cualquier página de la sección "Página" se mostrará en la plantilla *page.php*.
+Plantillas para usar en diferentes páginas.  
+Hay que especificar que se trata de un template con un comentario multilínea.  
+Cualquier página de la sección "Página" se mostrará en la plantilla *page.php*.  
 Al editar una página, se puede seleccionar el template que la mostrará en `Atributos de la página -> Plantilla`.
 
 Código que debe aparecer al inicio del scritp

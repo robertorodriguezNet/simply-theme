@@ -97,6 +97,37 @@ header {
     padding: 2rem 0;
 }
 
+footer {
+    border-top: solid 1px var(--light-gray);
+    margin-top: 2rem;
+    padding-top: 2rem;
+}
+
+footer nav.menu-principal a {
+    color: var(--black);
+    text-align: center;
+    font-family: var(--main-font);
+    font-size: 1.4rem;
+    padding: 0 1rem;
+}
+
+footer .copyright {
+    text-align: center;
+    font-family: var(--main-font);
+    font-size: 1.4rem;
+    margin: 2rem 0 0 0;
+}
+
+@media (min-width: 768px) {
+    .footer-container{
+        display: flex;
+        justify-content: space-between;
+    }
+    footer .copyright {
+        margin: 0;
+    }
+}
+
 .container {
     width: min(95%, 120rem);
     margin: 0 auto;
@@ -106,7 +137,7 @@ header {
     padding: 5rem 0;
 }
 
-.content-center{
+.content-center {
     width: min(95%, 80rem);
 }
 
@@ -118,7 +149,8 @@ header .nav-bar {
     align-items: center;
 }
 
-header nav.menu-principal a{
+/* No tiene especificidad header/footer para poder ser diferente en el footer */
+nav.menu-principal a {
     color: var(--white);
     display: block;
     font-family: var(--heading-font);
@@ -126,9 +158,11 @@ header nav.menu-principal a{
     padding: .5rem 2rem;
     text-align: center;
 }
-header nav.menu-principal .current_page_item{
+
+nav.menu-principal .current_page_item {
     border-bottom: solid 3px var(--primary);
 }
+
 /* Menú principal está oculto en modo móvil */
 /* header nav.menu-principal {
     display: none;
@@ -139,20 +173,23 @@ header nav.menu-principal .current_page_item{
         flex-direction: row;
         justify-content: space-between;
     }
-    header nav.menu-principal {
+
+    nav.menu-principal {
         display: block;
     }
-    header nav.menu-principal ul {
+
+    nav.menu-principal ul {
         display: flex;
     }
 
     /* Efecto hover sobre los elementos del menú */
-.menu-principal a{
+    .menu-principal a {
         position: relative;
         z-index: 1;
     }
+
     header nav.menu-principal a::before,
-    header nav.menu-principal a::after{
+    header nav.menu-principal a::after {
         position: absolute;
         left: 0;
         content: '';
@@ -164,20 +201,24 @@ header nav.menu-principal .current_page_item{
         transform: scaleX(0);
         transition: transform .6s;
     }
-    header nav.menu-principal a::before{
+
+    header nav.menu-principal a::before {
         top: 0;
         transform-origin: left;
     }
-    header nav.menu-principal a::after{
+
+    header nav.menu-principal a::after {
         top: 50%;
         transform-origin: right;
     }
-    header nav.menu-principal a:hover::before{
+
+    header nav.menu-principal a:hover::before {
         transform: scaleX(1);
-    }    
-    header nav.menu-principal a:hover::after{
+    }
+
+    header nav.menu-principal a:hover::after {
         transform: scaleX(1);
-    }    
+    }
 
 }
 

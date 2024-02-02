@@ -23,7 +23,6 @@
                     'container_id' => 'menu-principal'
                 );
                 wp_nav_menu($args);
-
             ?>
         </div>
     </header>

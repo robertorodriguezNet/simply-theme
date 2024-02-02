@@ -152,6 +152,12 @@ Son llamadas con `get_template_part(ubicacion/template-sin-extension)`.
 
 ---
 
+## CUSTOM POST TYPE
+
+### Crear el plugin competiciones
+
+---
+
 ## ¿QUÉ QUIERO HACER?
 
 - **Barra de herramientas** mostrar la barra de herramientas cuando un usuario esté autenticado.

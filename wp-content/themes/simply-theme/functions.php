@@ -30,7 +30,7 @@ add_action('wp_enqueue_scripts','simplytheme_scripts_styles');
 function simplytheme_setup(){
 
     // Imágenes destacadas
-    add_theme_support('post_thumbnail');
+    add_theme_support( 'post-thumbnails' ); 
 
     // Títulos para SEO
     add_theme_support('title-tag');

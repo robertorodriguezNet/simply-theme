@@ -178,7 +178,7 @@ Son llamadas con `get_template_part(ubicacion/template-sin-extension)`.
 - **Imagen destacada** habilitar.
   - Se habilita desde `functions.php`.
   - El hook en el que se carga el **after_setup_theme**.
-  - En la función `add_theme_support('post_thumbnail');` declaramos las funcionalidades que queramos activar.
+  - En la función `add_theme_support('post_thumbnails');` declaramos las funcionalidades que queramos activar.
   - Se carga llamando a `the_post_thumbnail(tamaño,atributos)`.
     - Atributos:  `the_post_thumbnail('full',array('class' => 'imagen-destacada'))`.
   - Se debe comprobar la existencia de la imagen destacada con `if(have_post_thumbnail())`;

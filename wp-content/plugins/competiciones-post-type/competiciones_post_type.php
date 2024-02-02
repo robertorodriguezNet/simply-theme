@@ -48,7 +48,7 @@ function competiciones_post_type() {
 		'label'                 => __( 'competicion', 'simplytheme' ),
 		'description'           => __( 'Competiciones del club', 'simplytheme' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'thumbnail', 'comments', 'custom-fields', 'excerpt' ),
+		'supports'              => array( 'title', 'editor', 'thumbnail'),
 		'hierarchical'          => true,
 		'public'                => true,
 		'show_ui'               => true,

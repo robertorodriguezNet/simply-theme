@@ -145,6 +145,13 @@ Muestra el contenido del post centrado.
 
 ---
 
+## PARTS
+
+Se ubican en *template-parts*.  
+Son llamadas con `get_template_part(ubicacion/template-sin-extension)`.
+
+---
+
 ## ¿QUÉ QUIERO HACER?
   
 - **footer** Incluir el footer

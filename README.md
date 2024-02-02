@@ -153,6 +153,10 @@ Son llamadas con `get_template_part(ubicacion/template-sin-extension)`.
 ---
 
 ## ¿QUÉ QUIERO HACER?
+
+- **Barra de herramientas** mostrar la barra de herramientas cuando un usuario esté autenticado.
+  - Colocar la función `wp_footer()` justo antes de la etiquete *</body>*.
+  - También activa el pligin de *Adapta RGPD*.
   
 - **footer** Incluir el footer
   - En `footer.php` se copia el *</body>* y el *</html>*.

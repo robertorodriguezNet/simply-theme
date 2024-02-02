@@ -12,13 +12,16 @@
         ?>
 
         <p class="copyright">
-            &copy;<?=date('Y')?> <?=get_bloginfo('description')?> - Diseño Web :: <a href="https://robertorodriguez.net" target="_blank">robertorodriguez.net</a>
+            &copy;
+            <?= date('Y') ?>
+            <?= get_bloginfo('description') ?> - Diseño Web :: <a href="https://robertorodriguez.net"
+                target="_blank">robertorodriguez.net</a>
         </p>
 
     </div>
 
 </footer>
-
+<?php wp_footer(); ?>
 </body>
 
 </html>

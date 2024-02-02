@@ -25,11 +25,14 @@ add_action('wp_enqueue_scripts','simplytheme_scripts_styles');
 
 /**
  * Establecemos parámetros para el tema.
+ * Se llama una vez que ha sido activado el tema.
  */
 function simplytheme_setup(){
 
     // Imágenes destacadas
     add_theme_support('post_thumbnail');
 
+    // Títulos para SEO
+    add_theme_support('title-tag');
 }
 add_action('after_setup_theme','simplytheme_setup');

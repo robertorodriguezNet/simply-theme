@@ -177,5 +177,10 @@ Son llamadas con `get_template_part(ubicacion/template-sin-extension)`.
     - Atributos:  `the_post_thumbnail('full',array('class' => 'imagen-destacada'))`.
   - Se debe comprobar la existencia de la imagen destacada con `if(have_post_thumbnail())`;
 
+- **Title** tag del título
+  - En *functions.php*, dentro de la función que se llame en `add_action`, llamamos a la función `add_theme_support('title-tag')`.
+    - La función en la se colocar esta llamada es `simplytheme_setup`.
+  - En el *header* hay que eliminar la etiqueta *title*, ya que esta es cargada por `wp_head()`.
+
 - **URL** Obtener la URL hacia el directorio del tema.
   - `<?= get_template_directory_uri(); ?>`

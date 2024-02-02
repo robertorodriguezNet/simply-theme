@@ -99,12 +99,15 @@ header {
 
 .container {
     width: min(95%, 120rem);
-    /* min: 95%, max: 1200px */
     margin: 0 auto;
 }
 
 .section {
     padding: 5rem 0;
+}
+
+.content-center{
+    width: min(95%, 80rem);
 }
 
 /** Barra de navegación **/
